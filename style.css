@@ -1,0 +1,163 @@
+@font-face {
+  font-family: "OCR";
+  src: url(font/OCR\ A\ Extended\ Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #23074d, #ff4c1c);
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #23074d;
+  clip-path: circle(40% at 90% 50%);
+}
+.card {
+  width: 506px;
+  height: 319px;
+  background: radial-gradient(
+    140% 140% at 0% 0%,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border-top: 1px solid #eeeded70;
+  border-left: 1px solid #eeeded70;
+  border-radius: 30px;
+  backdrop-filter: blur(30px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  position: relative;
+}
+.card.animation {
+  animation: inv 1s linear;
+}
+h2,
+img,
+img,
+h3,
+h4,
+h5 {
+  position: absolute;
+  color: white;
+}
+h2.name {
+  top: 20px;
+  right: 30px;
+  font-weight: 100;
+}
+
+img.chip {
+  width: 55px;
+  left: 30px;
+  top: 70px;
+}
+img.contactless {
+  width: 55px;
+  left: 85px;
+  top: 70px;
+}
+
+h3.number {
+  left: 0;
+  width: 100%;
+  text-align: center;
+  top: 160px;
+  font-size: 2.3rem;
+  display: flex;
+  justify-content: space-around;
+  font-family: OCR;
+}
+
+h4.card-holder {
+  bottom: 30px;
+  left: 30px;
+}
+
+h4 span {
+  font-size: 0.8rem;
+  font-weight: 100;
+}
+
+h5.valid {
+  bottom: 30px;
+  left: calc(50% - 70px / 2);
+  width: 70px;
+}
+
+h5.valid span {
+  font-weight: 100;
+}
+
+img.visa {
+  width: 80px;
+  bottom: 30px;
+  right: 30px;
+}
+
+div.generate,
+div.generateBlock {
+  width: 5.5rem;
+  height: 5.5rem;
+  font-size: 2rem;
+  position: fixed;
+  bottom: 5%;
+  left: calc(50% - 5.5rem / 2);
+  border-radius: 50%;
+  cursor: pointer;
+}
+div.generate {
+  border: 5px solid #ff4c1c;
+  transition: 0.2s;
+  background-color: #23074d;
+}
+div.generateBlock {
+  display: none;
+  opacity: 0;
+}
+
+div.generate.animation {
+  animation: rotate 0.6s linear;
+}
+div.generate i {
+  color: #ff4c1c;
+  position: absolute;
+  top: calc(50% - 3rem / 2);
+  left: calc(50% - 3rem / 2);
+  font-size: 3rem;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+
+@keyframes inv {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
